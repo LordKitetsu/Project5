@@ -1,28 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orinoco Shopping Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Orinoco</title>
 </head>
+
 <body>
-    <header>
-<div>Orinoco</div>
-<nav>
-    <ul>
-        <li>Accueil</li>
-        <li>Produits</li>
-    </ul>
-</nav>
+
+    <!-- header commun -->
+
+    <header class="container border border-warning text-center">
+        <h1 class="">Orinoco</h1>
+        <nav class="d-flex-right">
+            <ul>
+                <li class="border btn bg-light"><a href="index.html">Home</a></li>
+                <li class="border btn bg-light"><a href="products.html">Products</a></li>
+                <li class="border btn bg-light"><a href="cart.html">Cart<ion-icon name="cart-outline">Cart<span>0</span>
+                        </ion-icon></a></li>
+            </ul>
+        </nav>
     </header>
-    <h1>Mon panier</h1>
-    <section>
+
+    <!-- fin header commun -->
+
+    <!-- Partie principale -->
+    <div class="container">
+        <div class="d-flex border product-row d-block">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="5">Récapitulatif de la commande</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Item</td>
+                        <td>Aperçu</td>
+                        <td>Coloris</td>
+                        <td>Prix</td>
+                        <td>Quantité</td>
+                    </tr>
+                    <tr>
+                        <td>Norbert</td>
+                        <td><img class="img-mini" src="http://localhost:3000/images/teddy_1.jpg" alt="ourson norbert" />
+                        </td>
+                        <td>Chocolat</td>
+                        <td>29.00€</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3 class="text-center">Total :</h3>
+    <div class="d-flex flex-row-reverse">
+        <button class="btn-success">Valider Commande</button>
+        <button class="btn-danger">Annuler Commande</button>
         
-    </section>
-    <div><p>Confirmation de la commande</p></div>
-    <footer>
-<div>Mentions légales</div>
-<div>Contact</div>
+    </div>
+    </div>
+
+    <!-- fin partie principale -->
+
+    <!-- Footer commun -->
+    <footer class="container border border-warning text-center">
+        <div>Contact</div>
     </footer>
+
+    <!-- fin footer commun -->
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="JS/utils.js"></script>
+    <script src="JS/index.js"></script>
+
+    <!-- fin scripts -->
+
 </body>
+
 </html>
