@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
     <title>Orinoco</title>
 </head>
@@ -29,8 +31,14 @@
 
     <!-- fin header commun -->
 
+    <!-- Code à injecter depuis le bouton Personnaliser de la page index-->
+
+    <div id="modifyItem" class="container border bg-light"></div>
+
+    <!-- Fin du code à injecter -->
+
     <!-- Partie principale -->
-    <div class="container border border-warning">
+    <div class="container border bg-light">
         <div class="grid-product">
             <div class="grid-img">
                 <img class="img-products" src="http://localhost:3000/images/teddy_1.jpg" alt="" />
@@ -52,8 +60,8 @@
             <div class="grid-description">Très joli ourson qui vient en plusieurs coloris !</div>
         </div>
         <div class="item-choice text-center d-block">
-            <button>Continuer Achats</button>
-            <button>Aller au Panier</button>
+            <button><a href="index.html">Continuer Achats</a></button>
+            <button><a href="cart.html">Aller au Panier</a></button>
         </div>
     </div>
 
@@ -67,7 +75,7 @@
     <!-- fin footer commun -->
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    
     <script src="JS/utils.js"></script>
     <script src="JS/index.js"></script>
 

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
     <title>Orinoco</title>
 </head>
@@ -21,7 +23,8 @@
             <ul>
                 <li class="border btn bg-light"><a href="index.html">Home</a></li>
                 <li class="border btn bg-light"><a href="products.html">Products</a></li>
-                <li class="border btn bg-light"><a href="cart.html">Cart<ion-icon name="cart-outline">Cart<span>0</span></ion-icon></a></li>
+                <li class="border btn bg-light"><a href="cart.html">Cart<ion-icon name="cart-outline">Cart<span>0</span>
+                        </ion-icon></a></li>
             </ul>
         </nav>
     </header>
@@ -29,62 +32,81 @@
     <!-- fin header commun -->
 
     <!-- Partie principale -->
-    <div class="container bg-light border d-flex  justify-content-around products">
-        <div class="w-25 p-3 d-flex  flex-column align-items-center">
-            <img class="img-fluid img-index" src="http://localhost:3000/images/teddy_1.jpg" alt="ourson norbert" class="rounded" />
-            <h4>Norbert</h4>
-            <h4>29.00€</h4>
-            <button class="btn-primary border-rounded">Personnaliser</button>
-            <p class="text-center">Coloris disponibles : <br/>
-                Bronzage <br/>
-                Chocolat <br/>
-                Noir <br/>
-                Blanc <br/>
-                 </p>
+
+    <!-- Code JavaScript à injecter -->
+    <div id="afficherProduits">
+        <div id="teddiesContainer" class="container bg-light border d-flex  justify-content-around item_object products">
+        
         </div>
-        <div class="w-25 p-3 d-flex  flex-column align-items-center">
-            <img class="img-fluid img-index" src="http://localhost:3000/images/teddy_2.jpg" alt="ourson arnold" class="rounded" />
-            <h4>Arnold</h4>
-            <h4>39.00€</h4>
-            <button class="btn-primary border-rounded">Personnaliser</button>
-            <p class="text-center">Coloris disponibles : <br/>
-                Marron Clair <br/>
-                Marron Foncé <br/>
-                Blanc <br/>
-                 </p>
-        </div>
-        <div class="w-25 p-3 d-flex  flex-column align-items-center">
-            <img class="img-fluid img-index" src="http://localhost:3000/images/teddy_3.jpg" alt="oursons lenny&carl" class="rounded" />
-            <h4>Lenny & Carl</h4>
-            <h4>59.00€</h4>
-            <button class="btn-primary border-rounded">Personnaliser</button>
-            <p class="text-center">Coloris disponible : <br/>
-                Marron <br/>
-            </p>
-        </div>
-        <div class="w-25 p-3 d-flex  flex-column align-items-center">
-            <img class="img-fluid img-index" src="http://localhost:3000/images/teddy_4.jpg" alt="ourson gustav" class="rounded" />
-            <h4>Gustav</h4>
-            <h4>45.00€</h4>
-            <button class="btn-primary border-rounded">Personnaliser</button>
-            <p class="text-center">Coloris disponibles : <br/>
-                Marron <br/>
-                Bleu <br/>
-                Rose <br/>
-            </p>
-        </div>
-        <div class="w-25 p-3 d-flex  flex-column align-items-center">
-            <img class="img-fluid img-index" src="http://localhost:3000/images/teddy_5.jpg" alt="ourson garfunkel" class="rounded" />
-            <h4>Garfunkel</h4>
-            <h4>55.00€</h4>
-            <button class="btn-primary border-rounded">Personnaliser</button>
-            <p class="text-center">Coloris disponibles : <br/>
-                Beige <br/>
-                Bronzage <br/>
-                Chocolat <br/>
-            </p>
-        </div>
+
     </div>
+
+    <!-- Placeholder -->
+
+    <!-- <div class="container bg-light border d-flex  justify-content-around item_object products">
+        <div class="w-25 p-3 d-flex  flex-column align-items-center">
+            <img class="img-fluid img-index item_img" src="http://localhost:3000/images/teddy_1.jpg"
+                alt="ourson norbert" class="rounded" />
+            <h4 class="item_name">Norbert</h4>
+            <h4 class="item_price">29.00€</h4>
+            <button class="btn-primary border-rounded">Personnaliser</button>
+            <p class="text-center">Coloris disponibles : <br />
+                Bronzage <br />
+                Chocolat <br />
+                Noir <br />
+                Blanc <br />
+            </p>
+        </div>
+        <div class="w-25 p-3 d-flex  flex-column align-items-center item_object">
+            <img class="img-fluid img-index item_img" src="http://localhost:3000/images/teddy_2.jpg" alt="ourson arnold"
+                class="rounded" />
+            <h4 class="item_name">Arnold</h4>
+            <h4 class="item_price">39.00€</h4>
+            <button class="btn-primary border-rounded">Personnaliser</button>
+            <p class="text-center">Coloris disponibles : <br />
+                Marron Clair <br />
+                Marron Foncé <br />
+                Blanc <br />
+            </p>
+        </div>
+        <div class="w-25 p-3 d-flex  flex-column align-items-center item_object">
+            <img class="img-fluid img-index item_img" src="http://localhost:3000/images/teddy_3.jpg"
+                alt="oursons lenny&carl" class="rounded" />
+            <h4 class="item_name">Lenny & Carl</h4>
+            <h4 class="item_price">59.00€</h4>
+            <button class="btn-primary border-rounded">Personnaliser</button>
+            <p class="text-center">Coloris disponible : <br />
+                Marron <br />
+            </p>
+        </div>
+        <div class="w-25 p-3 d-flex  flex-column align-items-center item_object">
+            <img class="img-fluid img-index item_img" src="http://localhost:3000/images/teddy_4.jpg" alt="ourson gustav"
+                class="rounded" />
+            <h4 class="item_name">Gustav</h4>
+            <h4 class="item_price">45.00€</h4>
+            <button class="btn-primary border-rounded">Personnaliser</button>
+            <p class="text-center">Coloris disponibles : <br />
+                Marron <br />
+                Bleu <br />
+                Rose <br />
+            </p>
+        </div>
+        <div class="w-25 p-3 d-flex  flex-column align-items-center item_object">
+            <img class="img-fluid img-index item_img" src="http://localhost:3000/images/teddy_5.jpg"
+                alt="ourson garfunkel" class="rounded" />
+            <h4 class="item_name">Garfunkel</h4>
+            <h4 class="item_price">55.00€</h4>
+            <button class="btn-primary border-rounded">Personnaliser</button>
+            <p class="text-center">Coloris disponibles : <br />
+                Beige <br />
+                Bronzage <br />
+                Chocolat <br />
+            </p>
+        </div>
+    </div> -->
+
+    <!-- Fin Placeholder -->
+
     <!-- fin partie principale -->
 
     <!-- Footer commun -->
@@ -95,9 +117,10 @@
     <!-- fin footer commun -->
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
     <script src="JS/utils.js"></script>
     <script src="JS/index.js"></script>
+    
 
     <!-- fin scripts -->
 
