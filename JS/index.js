@@ -1,42 +1,46 @@
 let teddiesContainer = document.getElementById("teddiesContainer");
 let showProducts = document.getElementById("afficherProduits");
-// function to get all products from the server
-async function getAllProducts() {
-    let resp = await fetch(api);
-    return await resp.json(); 
-};
+let modifyItem = document.getElementById('modifyItem');
+
+showProducts.append(teddiesContainer);
+
 getAllProducts().then(teddies => {
     console.log(teddies);
     bindTeddiesToView(teddies);
 });
 
+
 function bindTeddiesToView(teddies) {
     teddies.forEach(teddy => {
-        teddiesContainer.innerHTML += displayAllTeddiesView(teddy);
+        let div = document.createElement('div');
+        div.className = "w-25 p-3 d-flex flex-column align-items-center";
+        let img = document.createElement('img');
+        img.className = "img-fluid img-index item_img rounded";
+        img.src = teddy.imageUrl;
+        img.alt = teddy.name;
+        let firstH4 = document.createElement('h4');
+        firstH4.className = "item_name"
+        firstH4.innerText = teddy.name;
+        let secondH4 = document.createElement('h4');
+        secondH4.className = "item_name"
+        secondH4.textContent = (teddy.price / 100) + "€"
+        let button = document.createElement('button');
+        button.id = "sendItemToCart"
+        button.className = "btn-primary addCart border-rounded"
+        button.innerText = "Personnaliser"
+        teddiesContainer.appendChild(div);
+        div.appendChild(img);
+        div.appendChild(firstH4);
+        div.appendChild(secondH4);
+        div.appendChild(button);
+
+        button.addEventListener('click', () => {
+            window.location.href = "products.html?id=" + teddy._id;
+
+        })
     });
-    showProducts.append(teddiesContainer);
-}
-
-function displayAllTeddiesView(teddy){
-    return (
-        `
-    <div  class="w-25 p-3 d-flex  flex-column align-items-center">
-        <img class="img-fluid img-index item_img" src=${teddy.imageUrl} alt=${teddy.name} class="rounded" />
-        <h4 class="item_name">${teddy.name}</h4>
-        <h4 class="item_price">${teddy.price/100+",00€"}</h4>
-        <button id="sendItemToCart" class="btn-primary addCart border-rounded">Personnaliser</button>
-    </div>
-        `
-    );
-    
 }
 
 
-// Personnaliser sur page product.html
 
-let modifyItem = document.querySelectorAll("button");
-console.log(modifyItem);
 
-for (let i = 0; i < modifyItem.length; i++){ 
-    console.log(modifyItem[i]) 
-}
