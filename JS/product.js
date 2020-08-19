@@ -53,16 +53,35 @@ function productToModify(teddy) {
         secondDiv.appendChild(fifthDiv);
        
         
+        class Teddy {
+            constructor(colors, description, imageUrl, name, price, id, quantity){
+                this.colors = colors;
+                this.description = description;
+                this.imageUrl = imageUrl;
+                this.name = name;
+                this.price = price;
+                this.id = id;
+                this.quantity = quantity;
+            }
+        }
         button.addEventListener('click', () => {
             if (localStorage.length === 0) {
                 console.log(teddy);
-                bearBox.push(teddy);
+                bearBox.push(new Teddy(teddy.color, teddy.description, teddy.imageUrl, teddy.name, teddy.price, teddy._id, 1));
                 localStorage.setItem('ours', JSON.stringify(bearBox));
-                
                 window.location.href = "cart.html";
             } else {
-                let bearFactory = JSON.parse(localStorage.getItem('ours')); 
-                bearFactory.push(teddy);
+                let bearFactory = JSON.parse(localStorage.getItem('ours'));
+                let productAlreadyAdded = false;
+                for(let i in bearFactory){
+                    if(teddy._id === bearFactory[i].id){
+                        productAlreadyAdded = true;
+                        bearFactory[i].quantity += 1;
+                    }
+                }
+                if(!productAlreadyAdded){
+                    bearFactory.push(new Teddy(teddy.color, teddy.description, teddy.imageUrl, teddy.name, teddy.price, teddy._id, 1));
+                }
                 localStorage.setItem('ours', JSON.stringify(bearFactory));
                 window.location.href = "cart.html";
             }
