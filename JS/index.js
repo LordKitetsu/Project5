@@ -1,16 +1,15 @@
 let teddiesContainer = document.getElementById("teddiesContainer");
 let showProducts = document.getElementById("afficherProduits");
-let modifyItem = document.getElementById('modifyItem');
 
 showProducts.append(teddiesContainer);
 
 getAllProducts().then(teddies => {
     console.log(teddies);
-    bindTeddiesToView(teddies);
+    displayTeddies(teddies);
 });
 
 
-function bindTeddiesToView(teddies) {
+function displayTeddies(teddies) {
     teddies.forEach(teddy => {
         let div = document.createElement('div');
         div.className = "w-25 p-3 d-flex flex-column align-items-center";
@@ -25,7 +24,7 @@ function bindTeddiesToView(teddies) {
         secondH4.className = "item_name"
         secondH4.textContent = (teddy.price / 100) + "€"
         let button = document.createElement('button');
-        button.id = "sendItemToCart"
+        button.id = "sendItemToCart";
         button.className = "btn-primary addCart border-rounded"
         button.innerText = "Personnaliser"
         teddiesContainer.appendChild(div);

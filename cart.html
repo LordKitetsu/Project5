@@ -32,40 +32,47 @@
     <!-- fin header commun -->
 
     <!-- Partie principale -->
+    <div id="main-cart"></div>
+
     <div class="container commande">
-        <div class="d-flex border product-row d-block">
+        <div class="d-flex border product-row d-block cart-items-container">
             <table class="table">
                 <thead>
                     <tr>
-                        <th colspan="5">Récapitulatif de la commande</th>
+                        <th colspan="4">Récapitulatif de la commande</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="corps">
                     <tr>
-                        <td>Item</td>
+                        <td>Article</td>
                         <td>Aperçu</td>
-                        <td>Coloris</td>
                         <td>Prix</td>
                         <td>Quantité</td>
-                    </tr>
-                    <tr>
-                        <td>Norbert</td>
-                        <td><img class="img-mini" src="http://localhost:3000/images/teddy_1.jpg" alt="ourson norbert" />
-                        </td>
-                        <td>Chocolat</td>
-                        <td>29.00€</td>
-                        <td>1</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <h3 class="text-center">Total :</h3>
-        <div class="d-flex flex-row-reverse">
-            <button class="btn-success">Valider Commande</button>
-            <button class="remove btn-danger">Annuler Commande</button>
-
-        </div>
     </div>
+    <h3 class="text-center">Total :<span id="total">0</span>€</h3>
+    <div class="d-flex justify-content-center flex-row-reverse">
+        <button class="btn-success">Valider Commande</button>
+        <button class="remove btn-danger">Annuler Commande</button>
+        <button class="btn-warning"><a href="index.html">Continuer Achats</a></button>
+    </div>
+
+    <form class="container d-flex flex-column">
+        <label>Nom</label>
+        <input type="text" pattern="[a-zA-ZÀ-ÿ]" required>
+        <label>Prénom</label>
+        <input type="text" pattern="[a-zA-ZÀ-ÿ]" required>
+        <label>Adresse</label>
+        <input type="text" pattern="[a-zA-ZÀ-ÿ][0-9]" required>
+        <label>Ville</label>
+        <input type="text" pattern="[a-zA-ZÀ-ÿ]" required>
+        <label>Email</label>
+        <input type="email" pattern="(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/](19|20)\d\d" required>
+        <input type="submit">
+    </form>
 
     <!-- fin partie principale -->
 
@@ -79,7 +86,6 @@
     <!-- Scripts -->
 
     <script src="JS/utils.js"></script>
-    <script src="JS/index.js"></script>
     <script src="JS/cart.js"></script>
 
     <!-- fin scripts -->

@@ -6,3 +6,10 @@ async function getAllProducts() {
     return await response.json();
 };
 
+let params = (new URL(document.location)).searchParams;
+let idTeddy = params.get("id"); 
+
+async function getTeddy() {
+    let response = await fetch(api+idTeddy);
+    return await response.json();
+};
