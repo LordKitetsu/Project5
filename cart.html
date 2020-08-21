@@ -56,23 +56,27 @@
     <h3 class="text-center total">
     </h3>
     <div class="d-flex justify-content-center flex-row-reverse">
-        <button class="btn-success">Valider Commande</button>
+
         <button class="remove btn-danger">Annuler Commande</button>
-        <button class="btn-warning"><a href="index.html">Continuer Achats</a></button>
+        <a href="index.html"><button class="btn-warning">Continuer Achats</button></a>
     </div>
 
-    <form class="container d-flex flex-column">
-        <label>Nom</label>
-        <input type="text" pattern="[a-zA-ZÀ-ÿ]" required>
-        <label>Prénom</label>
-        <input type="text" pattern="[a-zA-ZÀ-ÿ]" required>
-        <label>Adresse</label>
-        <input type="text" pattern="[a-zA-ZÀ-ÿ][0-9]" required>
-        <label>Ville</label>
-        <input type="text" pattern="[a-zA-ZÀ-ÿ]" required>
-        <label>Email</label>
-        <input type="email" pattern="(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/](19|20)\d\d" required>
-        <input type="submit">
+    <form method="post" action="confirmation.html" class="container d-flex flex-column">
+        <label for="nom">Nom</label>
+        <input id="nom" placeholder="Votre nom ici..." pattern='^[A-Z]{1}[a-z]+$' type="text" required>
+        <label for="prenom">Prénom</label>
+        <input id="prenom" placeholder="Votre prénom ici..." pattern='^[A-Z]{1}[A-Za-zÀ-ÿ -]+$' type="text"
+            required>
+        <label for="address">Adresse</label>
+        <input id="address" placeholder="42 rue de la réponse, 17000..." pattern='^[0-9]{1,4}[ ,-][ A-Za-zÀ-ÿ0-9-]+$'
+            type="text" required>
+        <label for="city">Ville</label>
+        <input id="city" placeholder="Votre ville ici..." pattern='^[A-Z]{1}[a-zA-Z- ]+$' type="text" required>
+        <label for="mail">Email</label>
+        <input id="mail" placeholder="jeanmichel123@gmail.com..."
+            pattern='^[A-Za-z0-9](([\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})+$'
+            type="email" required>
+        <button id="valider" class="btn-success">Valider Commande</button>
     </form>
 
     <!-- fin partie principale -->

@@ -8,7 +8,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
     <title>Orinoco</title>
 </head>
@@ -23,7 +23,8 @@
             <ul>
                 <li class="border btn bg-light"><a href="index.html">Home</a></li>
                 <li class="border btn bg-light"><a href="products.html">Products</a></li>
-                <li class="border btn bg-light"><a href="cart.html">Cart<ion-icon name="cart-outline">Cart<span>0</span></ion-icon></a></li>
+                <li class="border btn bg-light"><a href="cart.html">Cart<ion-icon name="cart-outline">Cart<span>0</span>
+                        </ion-icon></a></li>
             </ul>
         </nav>
     </header>
@@ -32,12 +33,12 @@
 
     <!-- Partie principale -->
     <div class="container border">
-        <p>Merci pour votre commande chez Orinoco, 
-            <span class="firstName"></span><span class="lastName"></span> ! 
+        <p>Merci pour votre commande chez Orinoco,
+            <span class="confirm-firstName"></span><span class="confirm-lastName"></span> !
         </p>
-        <p>Vous allez reçevoir un email de confirmation à l'adresse <span class="mailAdress"></span>
+        <p>Vous allez reçevoir un email de confirmation à l'adresse <span class="confirm-mail"></span>
         </p>
-        <p>Elle sera envoyée à l'adresse suivante : <span class="adress"></span></p>
+        <p>Elle sera envoyée à l'adresse suivante : <span class="confirm-address"></span></p>
         <h2>Récapitulatif de votre commande</h2>
         <div class="recap"></div>
     </div>
@@ -53,7 +54,7 @@
     <!-- Scripts -->
 
     <script src="JS/utils.js"></script>
-    <script src="JS/index.js"></script>
+    <script src="JS/confirm.js"></script>
 
     <!-- fin scripts -->
 
