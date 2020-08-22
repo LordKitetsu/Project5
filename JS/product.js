@@ -89,20 +89,3 @@ function productToModify(teddy) {
         })
 }
 
-/* button.addEventListener('click', () => {
-    if (localStorage.length === 0) {
-        console.log(teddy);
-        bearBox.push(teddy)
-        localStorage.setItem('ours', JSON.stringify(bearBox));
-        
-        window.location.href = "cart.html";
-    } else {
-        let bearFactory = JSON.parse(localStorage.getItem('ours')); 
-        bearFactory.push(teddy);
-        localStorage.setItem('ours', JSON.stringify(bearFactory));
-        window.location.href = "cart.html";
-    }
-    
-})
- */ 
-// button eventlistener qui fonctionne avant l'essai de class
