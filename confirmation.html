@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
+    
     <title>Orinoco</title>
 </head>
 
@@ -34,13 +35,13 @@
     <!-- Partie principale -->
     <div class="container border">
         <p>Merci pour votre commande chez Orinoco,
-            <span class="confirm-firstName"></span><span class="confirm-lastName"></span> !
+            <span id="confirm-firstName"></span><span id="confirm-lastName"></span> !
         </p>
-        <p>Vous allez reçevoir un email de confirmation à l'adresse <span class="confirm-mail"></span>
+        <p>Vous allez reçevoir un email de confirmation à l'adresse <span id="confirm-mail"></span>
         </p>
-        <p>Elle sera envoyée à l'adresse suivante : <span class="confirm-address"></span></p>
+        <p>Elle sera envoyée à l'adresse suivante : <span id="confirm-address"></span></p>
         <h2>Récapitulatif de votre commande</h2>
-        <div class="recap"></div>
+        <div id="recap"></div>
     </div>
     <!-- fin partie principale -->
 
