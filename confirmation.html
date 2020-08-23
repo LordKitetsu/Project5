@@ -40,8 +40,28 @@
         <p>Vous allez reçevoir un email de confirmation à l'adresse <span id="confirm-mail"></span>
         </p>
         <p>Elle sera envoyée à l'adresse suivante : <span id="confirm-address"></span></p>
-        <h2>Récapitulatif de votre commande</h2>
-        <div id="recap"></div>
+        <span id="idcommande"></span>
+        <div class="container commande">
+            <div class="d-flex border product-row d-block cart-items-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="4">Récapitulatif de la commande</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corps">
+                        <tr>
+                            <td>Article</td>
+                            <td>Aperçu</td>
+                            <td>Prix</td>
+                            <td>Quantité</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h3 class="text-center total">
+        </h3>
     </div>
     <!-- fin partie principale -->
 
