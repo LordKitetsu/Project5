@@ -1,9 +1,15 @@
+// Requête GET pour un ourson unique.
+
 getTeddy().then(teddies => {
-    console.log(teddies);
+    // console.log(teddies);
     productToModify(teddies);
 });
 
+// Déclaration de variable dans laquelle contenir les objets.
+
 let bearBox = [];
+
+// Fonction qui crée le code à injecter dans le HTML
 
 function productToModify(teddy) {
         let firstDiv = document.createElement('div');
@@ -52,7 +58,7 @@ function productToModify(teddy) {
         selection.appendChild(option2);
         secondDiv.appendChild(fifthDiv);
        
-        
+        //Création de Classe pour intégrer la quantité.
         class Teddy {
             constructor(colors, description, imageUrl, name, price, id, quantity){
                 this.colors = colors;
@@ -64,6 +70,9 @@ function productToModify(teddy) {
                 this.quantity = quantity;
             }
         }
+        // Sur le clic : Ajouter 1 à la quantité si l'objet est présent.
+        // Ajouter l'objet s'il est absent.
+        // Enregistrer dans le localStorage et aller à la page cart.html
         button.addEventListener('click', () => {
             if (localStorage.length === 0) {
                 console.log(teddy);

@@ -1,14 +1,18 @@
+// Déclaration de variables
+
 let teddiesContainer = document.getElementById("teddiesContainer");
 let showProducts = document.getElementById("afficherProduits");
 
 showProducts.append(teddiesContainer);
+
+// Requête GET pour tous les oursons.
 
 getAllProducts().then(teddies => {
     console.log(teddies);
     displayTeddies(teddies);
 });
 
-
+// Fonction qui crée le code à injecter dans le HTML.
 function displayTeddies(teddies) {
     teddies.forEach(teddy => {
         let div = document.createElement('div');

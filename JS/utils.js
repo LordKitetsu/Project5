@@ -1,18 +1,21 @@
 const api = "http://localhost:3000/api/teddies/";
 
-// function to get all products from the server
+// Fonction GET tous les produits.
 async function getAllProducts() {
     let response = await fetch(api);
     return await response.json();
 };
-
+// Déclaration de variables.
 let params = (new URL(document.location)).searchParams;
 let idTeddy = params.get("id"); 
 
+// Fonction GET un seul produit.
 async function getTeddy() {
     let response = await fetch(api+idTeddy);
     return await response.json();
 };
+
+// Fonction qui injecte le code de création de tableau de commande dans le HTML.
 
 function createCommand() {
     ours.forEach(teddies => {
@@ -40,10 +43,11 @@ function createCommand() {
     })
   }
 
-
+// Déclaration du total avant modification.
   
 let total = 0;
 
+// Fonction de calcul du prix total du panier.
 
 function updateTotal() {
     var totalPrice = document.getElementsByClassName('total')[0];

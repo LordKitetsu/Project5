@@ -1,11 +1,11 @@
-// Clear cart sur cart.html
+// Attendre que le document soit chargé avant d'autoriser les fonctions.
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', clearCart)
 } else {
   clearCart();
 }
 
-//fonction qui vide le localStorage et nous ramène à la page d'accueil
+//Fonction qui vide le localStorage et nous ramène à la page d'accueil.
 function clearCart() {
   var removeCartItemButton = document.getElementsByClassName('remove');
   var button = removeCartItemButton[0];
@@ -17,27 +17,25 @@ function clearCart() {
   })
 }
 
-
+// Déclaration de variables.
 let ours = JSON.parse(localStorage.getItem('ours'));
 let tbody = document.getElementById('corps');
-
-
-
-
-
-createCommand();
-updateTotal()
-
 let form = document.getElementById('form')
 let valider = document.getElementById('valider');
+
+// Fonctions globales pour afficher le tableau des produits et le total.
+createCommand();
+updateTotal();
+
+
 
 valider.addEventListener('click', (e) => {
   if (!form.checkValidity()) {
     e.preventDefault();
-    alert('Invalid form')
+    alert('Veuillez remplir correctement les champs obligatoires.')
   } 
   e.preventDefault();
-
+// Déclarations des variables pour la route POST.
   let products = [];
   let data = {};
   let contact = {};
@@ -47,7 +45,7 @@ valider.addEventListener('click', (e) => {
   let address = document.getElementById('address');
   let city = document.getElementById('city');
   let mail = document.getElementById('mail');
-
+// Ajout de contenu dans ces variables.
   contact = {
     firstName: prenom.value,
     lastName: nom.value,
@@ -61,7 +59,7 @@ valider.addEventListener('click', (e) => {
   }
   data.products = products;
   data.contact = contact;
-
+// Fonction qui prépare la requête POST à être appellée.
   function sending(url, order) {
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
@@ -71,7 +69,7 @@ valider.addEventListener('click', (e) => {
             resolve(response = JSON.parse(this.responseText))
           } else {
             reject(
-              alert('Something went wrong')
+              console.log('Something went wrong')
             );
           }
         }
@@ -81,7 +79,8 @@ valider.addEventListener('click', (e) => {
       request.send(JSON.stringify(order));
     });
   };
-
+// Requête POST avec appel de la fonction correspondante.
+// Redirection vers la page de confirmation de commande.
   sending(api + "/order", data)
     .then((response) => {
       localStorage.setItem('contact', JSON.stringify(contact));
