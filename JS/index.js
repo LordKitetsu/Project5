@@ -16,7 +16,7 @@ getAllProducts().then(teddies => {
 function displayTeddies(teddies) {
     teddies.forEach(teddy => {
         let div = document.createElement('div');
-        div.className = "w-25 p-3 d-flex flex-column align-items-center";
+        div.className = "w-25 p-3 d-flex flex-column justify-content-around align-items-center";
         let img = document.createElement('img');
         img.className = "img-fluid img-index item_img rounded";
         img.src = teddy.imageUrl;
